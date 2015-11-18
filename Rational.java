@@ -41,23 +41,26 @@ numerator *= foo.denominator;
 denominator *= foo.numerator;
 }}
 
+//adds two rational numbers 
 public void add (Rational r) {
 		double c = this.denominator / r.denominator;
 		r.numerator*=c;
 		this.numerator+=r.numerator;
 		this.reduce();
-	}
+}
+//subtracts two rational numbers
 public void subtract (Rational r) {
 		double c = this.denominator / r.denominator;
 		r.numerator*=c;
 		this.numerator-=r.numerator;
 		this.reduce();
-	}
+}
+
 public int compareTo(Rational r) {
-		if ((this.numerator / this.denominator) > (r.numerator / r.denominator)) {
+	if ((this.numerator / this.denominator) > (r.numerator / r.denominator)) {
 			return 1;
 		}
-		else if ((this.numerator / this.denominator) < (r.numerator / r.denominator)) {
+	else if ((this.numerator / this.denominator) < (r.numerator / r.denominator)) {
 			return -1;
 		}
 		else {
