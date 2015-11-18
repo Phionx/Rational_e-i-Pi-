@@ -56,25 +56,13 @@ public void subtract (Rational r) {
 		this.reduce();
 }
 
-public int compareTo(Rational r) {
-	if ((this.numerator / this.denominator) > (r.numerator / r.denominator)) {
-			return 1;
-		}
-	else if ((this.numerator / this.denominator) < (r.numerator / r.denominator)) {
-			return -1;
-		}
-		else {
-			return 0;
-		}
-	}
-	
 //Euler's Algorithm
 //GCD-wrapper
 public double gcd(){
 return gcd_helper(numerator, denominator);
 }
 //GCD helper - recursive
-public double gcd_helper(double a, double b){
+public static double gcd_helper(double a, double b){
 if (b == 0){
 return a;
 }
@@ -89,6 +77,25 @@ denominator /= temp_gcd;
 } 
 
 
+/*
+Takes a Rational as a parameter and compares it to the calling object
+Returns 0 if the two numbers are equal
+Returns a positive integer if the calling number is larger than the parameter
+Returns a negative integer if the calling number is smaller than the parameter
+*/
+public int compareTo(Rational r){
+double temp_a = r.numerator*this.denominator;
+double temp_b = r.denominator*this.numerator;
+if(temp_a == temp_b) {
+return 0;
+}
+else if(temp_a > temp_b){
+return -1;
+} 
+else {
+return 1;
+}
+}
 public static void main(String [] args){
 System.out.println("\tTest Cases");
 Rational r = new Rational(2,3);
