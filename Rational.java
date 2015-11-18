@@ -41,6 +41,16 @@ numerator *= foo.denominator;
 denominator *= foo.numerator;
 }}
 
+public void add (Rational r) {
+		double c = this.denominator / r.denominator;
+		r.numerator*=c;
+		this.numerator+=r.numerator;
+	}
+	public void subtract (Rational r) {
+		double c = this.denominator / r.denominator;
+		r.numerator*=c;
+		this.numerator-=r.numerator;
+	}
 
 public static void main(String [] args){
 System.out.println("\tTest Cases");
@@ -58,6 +68,16 @@ System.out.println("Rational Number t: " + t);
 System.out.print("s/t = ");
 s.divide(t);
 s.multiply(t);
-System.out.println("s/t = " + s + " ~= " + s.floatValue());   
+System.out.println("s/t = " + s + " ~= " + s.floatValue()); 
+
+Rational a = new Rational(3,4);
+Rational j = new Rational(1,4);
+
+System.out.println("numerator is:" + r.numerator + " denominator is:" + r.denominator);
+System.out.println("we are adding this fraction to it " + j.numerator + "/" + j.denominator);
+a.subtract(j);
+System.out.println("Now that we added, numerator is:" + r.numerator + " denominator is:" + r.denominator);
+		
+		   
 }
 } 
