@@ -1,5 +1,5 @@
 /*
-Shantanu Jha, Vincent Tang
+Shantanu Jha, Sachal Malick
 e^(Pi*i)
 APCS1 pd5
 HW32-Irrationality Stops Here
