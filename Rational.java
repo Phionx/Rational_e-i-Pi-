@@ -47,13 +47,13 @@ public void add (Rational r) {
 		this.numerator+=r.numerator;
 		this.reduce();
 	}
-	public void subtract (Rational r) {
+public void subtract (Rational r) {
 		double c = this.denominator / r.denominator;
 		r.numerator*=c;
 		this.numerator-=r.numerator;
 		this.reduce();
 	}
-	public int compareTo(Rational r) {
+public int compareTo(Rational r) {
 		if ((this.numerator / this.denominator) > (r.numerator / r.denominator)) {
 			return 1;
 		}
