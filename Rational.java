@@ -45,13 +45,26 @@ public void add (Rational r) {
 		double c = this.denominator / r.denominator;
 		r.numerator*=c;
 		this.numerator+=r.numerator;
+		this.reduce();
 	}
 	public void subtract (Rational r) {
 		double c = this.denominator / r.denominator;
 		r.numerator*=c;
 		this.numerator-=r.numerator;
+		this.reduce();
 	}
-
+	public int compareTo(Rational r) {
+		if ((this.numerator / this.denominator) > (r.numerator / r.denominator)) {
+			return 1;
+		}
+		else if ((this.numerator / this.denominator) < (r.numerator / r.denominator)) {
+			return -1;
+		}
+		else {
+			return 0;
+		}
+	}
+	
 //Euler's Algorithm
 //GCD-wrapper
 public double gcd(){
@@ -91,14 +104,21 @@ s.divide(t);
 s.multiply(t);
 System.out.println("s/t = " + s + " ~= " + s.floatValue()); 
 
-Rational a = new Rational(3,4);
-Rational j = new Rational(1,4);
-
-System.out.println("numerator is:" + r.numerator + " denominator is:" + r.denominator);
-System.out.println("we are adding this fraction to it " + j.numerator + "/" + j.denominator);
-a.subtract(j);
-System.out.println("Now that we added, numerator is:" + r.numerator + " denominator is:" + r.denominator);
 		
+		Rational a = new Rational(4,8);
+		Rational j = new Rational(1,4);
+
+		System.out.println("numerator is:" + a.numerator + " denominator is:" + a.denominator);
+		System.out.println("we are subtracring this fraction from it " + j.numerator + "/" + j.denominator);
+		a.subtract(j);
+		System.out.println("Now that we added, numerator is:" + a.numerator + " denominator is:" + a.denominator);
+		
+		Rational hub = new Rational (1,2);
+		Rational flub = new Rational (2,3);
+		Rational chub = new Rational (1,2);
+		System.out.println(hub.compareTo(flub));
+		System.out.println(flub.compareTo(hub));
+		System.out.println(hub.compareTo(chub));		
 		   
 }
 } 
