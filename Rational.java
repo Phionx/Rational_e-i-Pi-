@@ -52,6 +52,27 @@ public void add (Rational r) {
 		this.numerator-=r.numerator;
 	}
 
+//Euler's Algorithm
+//GCD-wrapper
+public double gcd(){
+return gcd_helper(numerator, denominator);
+}
+//GCD helper - recursive
+public double gcd_helper(double a, double b){
+if (b == 0){
+return a;
+}
+return gcd_helper(b, a%b);
+}
+
+//Reduce To simplest terms function
+public void reduce(){
+double temp_gcd = gcd();
+numerator /= temp_gcd;
+denominator /= temp_gcd;
+} 
+
+
 public static void main(String [] args){
 System.out.println("\tTest Cases");
 Rational r = new Rational(2,3);
