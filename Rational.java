@@ -3,7 +3,7 @@ Sachal Malick, Shantanu Jha
 e^(Pi*i)
 APCS1 pd5
 HW32-Irrationality Stops Here
-2015-11-17
+2015-11-24
 */
 public class Rational {
 private double numerator, denominator;
