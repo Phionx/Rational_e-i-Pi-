@@ -85,6 +85,7 @@ Returns a positive integer if the calling number is larger than the parameter
 Returns a negative integer if the calling number is smaller than the parameter
 */
 public int compareTo(Object r){
+if((r instanceof Rational)){
 Rational temp = (Rational)r;
 double temp_a = temp.numerator*this.denominator;
 double temp_b = temp.denominator*this.numerator;
@@ -98,7 +99,8 @@ else {
 return 1;
 }
 }
-
+return 2;
+}
 public boolean equals(Rational r){
 return (compareTo(r) == 0);
 }
