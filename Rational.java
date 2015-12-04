@@ -1,11 +1,12 @@
 /*
-Sachal Malick, Shantanu Jha
+Leith Conybeare, Shantanu Jha
 e^(Pi*i)
 APCS1 pd5
-HW37-Rational Equality
-2015-11-24
+HW41-In America, the Driver Sits on the Left
+2015-12-3
 */
-public class Rational {
+
+public class Rational implements Comparable {
 private double numerator, denominator;
 //Default is rational number 0/1
 public Rational(){
@@ -83,9 +84,10 @@ Returns 0 if the two numbers are equal
 Returns a positive integer if the calling number is larger than the parameter
 Returns a negative integer if the calling number is smaller than the parameter
 */
-public int compareTo(Rational r){
-double temp_a = r.numerator*this.denominator;
-double temp_b = r.denominator*this.numerator;
+public int compareTo(Object r){
+Rational temp = (Rational)r;
+double temp_a = temp.numerator*this.denominator;
+double temp_b = temp.denominator*this.numerator;
 if(temp_a == temp_b) {
 return 0;
 }
